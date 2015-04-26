@@ -23,35 +23,35 @@ end
 
 #========== * FOOD API ROUTES
 
-get '/api/item' do                             #All menu items available
+get '/api/items' do                             #All menu items available
   item = Item.all
   content_type :json
   item.to_json
 end
 
-get '/api/item/:id' do                         #A single menu item and all the parties that included it
+get '/api/items/:id' do                         #A single menu item and all the parties that included it
   item = Item.find(params[:id].to_i)
   content_type :json
   item.to_json
 end
 
-post '/api/item' do                            #Creates a new food item
+post '/api/items' do                            #Creates a new food item
   new_item = Item.create(params[:item])
   content_type :json
   new_item.to_json
 end
 
-patch '/api/item/:id' do                       #Updates a menu item
+patch '/api/items/:id' do                       #Updates a menu item
   content_type :json
 
 end
 
-put '/api/item/:id' do                         #Updates a menu item
+put '/api/items/:id' do                         #Updates a menu item
   content_type :json
 
 end
 
-delete '/api/item/:id' do                      #deletes a menu item
+delete '/api/items/:id' do                      #deletes a menu item
   content_type :json
 
 end
