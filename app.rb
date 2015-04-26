@@ -18,70 +18,108 @@ end
 
 #========== * FOOD API ROUTES
 
-GET '/api/foods' do                             #All food items available
+GET '/api/item' do                             #All menu items available
+  content_type :json
+  Item.all.to_json
+end
+
+GET '/api/item/:id' do                         #A single menu item and all the parties that included it
+  item = Item.find(params[:id].to_i)
+  content_type :json
+end
+
+POST '/api/item' do                            #Creates a new food item
+  new_item = Item.create(params[:item])
+  content_type :json
+  new_item.to_json
+end
+
+PATCH '/api/item/:id' do                       #Updates a menu item
+  content_type :json
 
 end
 
-GET '/api/foods/:id' do                         #A single food item and all the parties that included it
+PUT '/api/item/:id' do                         #Updates a menu item
+  content_type :json
+
 end
 
-POST '/api/foods' do                            #Creates a new food item
-end
+DELETE '/api/item/:id' do                      #Deletes a menu item
+  content_type :json
 
-PATCH '/api/foods/:id' do                       #Updates a food item
-end
-
-PUT '/api/foods/:id' do                         #Updates a food item
-end
-
-DELETE '/api/foods/:id' do                      #Deletes a food item
 end
 
 
 #========== * PARTY API ROUTES
 
 GET '/api/parties' do                           #All parties
+  content_type :json
+
 
 end
 
 GET '/api/parties/:id' do                       #A single party and all the orders it contains
+  content_type :json
+
 
 end
 
 POST '/api/parties' do                          #Creates a new party
+  content_type :json
+
 end
 
 PATCH '/api/parties/:id' do                     #Updates a party's details
+  content_type :json
+
 end
 
 PUT '/api/parties/:id' do                       #Updates a party's details
+  content_type :json
+
 end
 
 DELETE '/api/parties/:id' do                    #Deletes a specific party
+  content_type :json
+
 
 end
 
 #========== * ORDER API ROUTES
 
 POST '/api/orders	' do                          #Cretes a new order
+  content_type :json
+
 end
 
 PATCH '/api/orders/:id' do                      #Comp an order
+  content_type :json
+
 end
 
 PUT '/api/orders/:id' do                        #Comp an order
+  content_type :json
+
 end
 
 DELETE '/api/orders/:id' do                     #delete an order
+  content_type :json
+
 end
 
 #========== * BILLING API ROUTES
 
 GET '/api/parties/:id/receipt' do
+  content_type :json
+
 end
 
 PATCH '/api/parties/:id/checkout' do
+  content_type :json
+
 end
 
 PATCH '/api/parties/:id/checkout' do
+  content_type :json
+
 end
