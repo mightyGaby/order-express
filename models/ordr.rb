@@ -1,4 +1,4 @@
-class Item < ActiveRecord::Base
+class Ordr < ActiveRecord::Base
   belongs_to(:party)
   belongs_to(:guest)
   has_many(:requests)

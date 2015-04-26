@@ -19,7 +19,7 @@ CREATE TABLE menu_item(
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
   description TEXT,
-  cost NUMERIC(10,2),
+  price NUMERIC(10,2),
   restriction BOOLEAN,
   category_id INTEGER REFERENCES category(id)
 );
