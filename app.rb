@@ -8,6 +8,11 @@ ActiveRecord::Base.establish_connection(
 )
 
 #========== * MODELS
+require './models/guest.rb'
+require './models/item.rb'
+require './models/ordr.rb'
+require './models/party.rb'
+require './models/request.rb'
 
 #========== * HELPER FUNCTIONS
 
@@ -19,13 +24,15 @@ end
 #========== * FOOD API ROUTES
 
 GET '/api/item' do                             #All menu items available
+  item = Item.all
   content_type :json
-  Item.all.to_json
+  item.to_json
 end
 
 GET '/api/item/:id' do                         #A single menu item and all the parties that included it
   item = Item.find(params[:id].to_i)
   content_type :json
+  item.to_json
 end
 
 POST '/api/item' do                            #Creates a new food item
