@@ -35,25 +35,12 @@ CREATE TABLE guest (
   dietary_restriction INTEGER REFERENCES restriction(id)
 );
 
-CREATE TABLE request(
-  id SERIAL PRIMARY KEY,
-  item_id INTEGER REFERENCES menu_item(id),
-  guest_id INTEGER REFERENCES guest(id),
-  meal_id INTEGER REFERENCES meal(id),
-  description VARCHAR(255)
-);
-
 CREATE TABLE menu_item(
   id SERIAL PRIMARY KEY,
-  description VARCHAR(255),
+  name VARCHAR(255),
+  description TEXT,
   cost NUMERIC(10,2),
   restriction_id INTEGER REFERENCES restriction(id)
-);
-
-CREATE TABLE meal (
-  id SERIAL PRIMARY KEY,
-  guest_id INTEGER REFERENCES guest(id),
-  total_id INTEGER REFERENCES meal_total(id)
 );
 
 CREATE TABLE meal_total(
@@ -62,11 +49,28 @@ CREATE TABLE meal_total(
   tbl_id INTEGER REFERENCES tbl(id)
 );
 
+CREATE TABLE ordr (
+  id SERIAL PRIMARY KEY,
+  guest_id INTEGER REFERENCES guest(id),
+  total_id INTEGER REFERENCES meal_total(id),
+  party_id INTEGER REFERENCES party(id)
+);
+
+CREATE TABLE item_request(
+  id SERIAL PRIMARY KEY,
+  item_id INTEGER REFERENCES menu_item(id),
+  guest_id INTEGER REFERENCES guest(id),
+  ordr_id INTEGER REFERENCES ordr(id),
+  description TEXT
+);
+
+
+
 CREATE TABLE bill(
   id SERIAL PRIMARY KEY,
   guest_id INTEGER REFERENCES guest(id),
   total_id INTEGER REFERENCES meal_total(id),
-  meal_id INTEGER REFERENCES meal(id),
+  ordr_id INTEGER REFERENCES ordr(id),
   party_id INTEGER REFERENCES party(id),
   tbl_id INTEGER REFERENCES tbl(id)
 );
