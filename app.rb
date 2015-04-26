@@ -107,30 +107,33 @@ end
 #========== * ORDER API ROUTES
 
 post '/api/orders	' do                          #Cretes a new order
+  new_order = Order.create(params[:order])
   content_type :json
-
 end
 
 patch '/api/orders/:id' do                      #Comp an order
+  order = Order.find(params[:id])
+  order.update(params[:order])
   content_type :json
-
 end
 
 put '/api/orders/:id' do                        #Comp an order
+  order = Order.find(params[:id])
+  order.update(params[:order])
   content_type :json
-
 end
 
 delete '/api/orders/:id' do                     #delete an order
   content_type :json
-
+  order = Order.find(params[:id].to_i)
+  order.delete
 end
 
 #========== * BILLING API ROUTES
 
 get '/api/parties/:id/receipt' do
+  
   content_type :json
-
 end
 
 patch '/api/parties/:id/checkout' do
@@ -144,5 +147,6 @@ patch '/api/parties/:id/checkout' do
 end
 
 
-
+#requests
+#add a request to an order
 #add guest to a party

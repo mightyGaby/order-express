@@ -1,4 +1,4 @@
-class Ordr < ActiveRecord::Base
+class Order < ActiveRecord::Base
   belongs_to(:party)
   belongs_to(:guest)
   has_many(:requests)
