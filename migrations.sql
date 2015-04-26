@@ -6,12 +6,12 @@ CREATE DATABASE restaurant;
 
 CREATE TABLE parties (
   id SERIAL PRIMARY KEY,
-  party_name VARCHAR(80),
-  party_size INTEGER,
-  paid_status BOOLEAN
+  name VARCHAR(80),
+  size INTEGER,
+  status BOOLEAN
 );
 
-CREATE TABLE guests (id SERIAL PRIMARY KEY,   party_id INTEGER REFERENCES parties(id));
+CREATE TABLE guests (id SERIAL PRIMARY KEY,  party_id INTEGER REFERENCES parties(id));
 
 
 CREATE TABLE items(

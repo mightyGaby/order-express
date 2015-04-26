@@ -83,58 +83,66 @@ post '/api/parties' do                          #Creates a new party
   content_type :json
   Party.create(params[:party]).to_json
 end
-#
-# patch '/api/parties/:id' do                     #Updates a party's details
-#   content_type :json
-#
-# end
-#
-# put '/api/parties/:id' do                       #Updates a party's details
-#   content_type :json
-#
-# end
-#
-# delete '/api/parties/:id' do                    #deletes a specific party
-#   content_type :json
-#
-#
-# end
-#
-# #========== * ORDER API ROUTES
-#
-# post '/api/orders	' do                          #Cretes a new order
-#   content_type :json
-#
-# end
-#
-# patch '/api/orders/:id' do                      #Comp an order
-#   content_type :json
-#
-# end
-#
-# put '/api/orders/:id' do                        #Comp an order
-#   content_type :json
-#
-# end
-#
-# delete '/api/orders/:id' do                     #delete an order
-#   content_type :json
-#
-# end
-#
-# #========== * BILLING API ROUTES
-#
-# get '/api/parties/:id/receipt' do
-#   content_type :json
-#
-# end
-#
-# patch '/api/parties/:id/checkout' do
-#   content_type :json
-#
-# end
-#
-# patch '/api/parties/:id/checkout' do
-#   content_type :json
-#
-# end
+
+patch '/api/parties/:id' do                     #Updates a party's details
+  party = Party.find(param[:id].to_i)
+  party.update(param[:party])
+  content_type :json
+
+end
+
+put '/api/parties/:id' do                       #Updates a party's details
+  party = Party.find(param[:id].to_i)
+  party.update(param[:party])
+  content_type :json
+end
+
+delete '/api/parties/:id' do                    #deletes a specific party
+  party = Party.find(params[:id].to_i)
+  party.delete
+  {message: "byeeee"}.to_json
+  content_type :json
+end
+
+#========== * ORDER API ROUTES
+
+post '/api/orders	' do                          #Cretes a new order
+  content_type :json
+
+end
+
+patch '/api/orders/:id' do                      #Comp an order
+  content_type :json
+
+end
+
+put '/api/orders/:id' do                        #Comp an order
+  content_type :json
+
+end
+
+delete '/api/orders/:id' do                     #delete an order
+  content_type :json
+
+end
+
+#========== * BILLING API ROUTES
+
+get '/api/parties/:id/receipt' do
+  content_type :json
+
+end
+
+patch '/api/parties/:id/checkout' do
+  content_type :json
+
+end
+
+patch '/api/parties/:id/checkout' do
+  content_type :json
+
+end
+
+
+
+#add guest to a party
