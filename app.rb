@@ -132,7 +132,7 @@ end
 #========== * BILLING API ROUTES
 
 get '/api/parties/:id/receipt' do
-  
+
   content_type :json
 end
 
@@ -145,8 +145,3 @@ patch '/api/parties/:id/checkout' do
   content_type :json
 
 end
-
-
-#requests
-#add a request to an order
-#add guest to a party
