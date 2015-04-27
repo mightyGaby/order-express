@@ -1,0 +1,47 @@
+class ItemsController < Sinatra::Base
+
+  # enable  :sessions
+  # helpers Sinatra::SessionHelper
+
+  get '/api/items' do                             #All menu items available
+
+    item = Item.all
+    content_type :json
+    item.to_json
+  end
+
+  get '/api/items/:id' do                         #A single menu item and all the parties that included it
+
+    item = Item.find(params[:id].to_i)
+    content_type :json
+    item.to_json
+  end
+
+  post '/api/items' do                            #Creates a new food item
+
+    new_item = Item.create(params[:item])
+    content_type :json
+    new_item.to_json
+  end
+
+  patch '/api/items/:id' do                       #Updates a menu item
+
+    item = Item.find(params[:id].to_i)            #find a specific food item
+    item.update(params[:item])                    #updates that item with params
+    content_type :json
+  end
+
+  put '/api/items/:id' do                         #Updates a menu item
+    item = Item.find(params[:id].to_i)            #find a specific food item
+    item.update(params[:item])                    #updates that item with params
+    content_type :json
+  end
+
+  delete '/api/items/:id' do                      #deletes a menu item
+    item = Item.find(params[:id].to_i)            #find a specific food item
+    item.delete
+    {message: "this item is no longer offered on our menu. Way too mainstream"}.to_json
+    content_type :json
+  end
+
+end

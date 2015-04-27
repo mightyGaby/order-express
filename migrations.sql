@@ -11,10 +11,10 @@ CREATE TABLE parties (
   status BOOLEAN
 );
 
-CREATE TABLE guests (id SERIAL PRIMARY KEY,  party_id INTEGER REFERENCES parties(id));
+-- CREATE TABLE guests (id SERIAL PRIMARY KEY,  party_id INTEGER REFERENCES parties(id));
 
 
-CREATE TABLE items(
+CREATE TABLE items (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
   description TEXT,
@@ -23,17 +23,16 @@ CREATE TABLE items(
 );
 
 
-CREATE TABLE orders (
+CREATE TABLE orders (s
   id SERIAL PRIMARY KEY,
-  guest_id INTEGER REFERENCES guests(id),
   party_id INTEGER REFERENCES parties(id),
-  total INTEGER,
-  paid BOOLEAN
+  paid BOOLEAN,
+  seat INTEGER
 );
 
-CREATE TABLE request (
-  id SERIAL PRIMARY KEY,
-  item_id INTEGER REFERENCES items(id),
-  guest_id INTEGER REFERENCES guests(id),
-  order_id INTEGER REFERENCES orders(id)
-);
+-- CREATE TABLE request (
+--   id SERIAL PRIMARY KEY,
+--   item_id INTEGER REFERENCES items(id),
+--   guest_id INTEGER REFERENCES guests(id),
+--   order_id INTEGER REFERENCES orders(id)
+-- );
