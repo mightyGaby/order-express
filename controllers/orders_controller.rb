@@ -1,4 +1,4 @@
-class PartiesController < Sinatra::Base
+class OrdersController < Sinatra::Base
 
   # enable  :sessions
   # helpers Sinatra::SessionHelper

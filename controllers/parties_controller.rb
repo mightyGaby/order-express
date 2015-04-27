@@ -1,3 +1,4 @@
+class PartiesController < Sinatra::Base
 
   get '/' do                           #All parties
     parties = Party.all
