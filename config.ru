@@ -14,9 +14,9 @@ ActiveRecord::Base.establish_connection(
 ##session helpers
 
 #========== * MODELS
-require './models/item.rb'
-require './models/order.rb'
-require './models/party.rb'
+require './models/items.rb'
+require './models/orders.rb'
+require './models/parties.rb'
 
 #========== * CONTROLLERS
 require './controllers/items_controller.rb'
