@@ -1,6 +1,7 @@
+#MENU ITEM
+
 class Item < ActiveRecord::Base
-  has_many(:requests)
-  has_many(:orders, through: :requests)
+  has_many(:parties, through: :orders)
   def to_s
     "pizza!"
   end

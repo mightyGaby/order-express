@@ -4,3 +4,9 @@
 body{
   color: lightgrey;
 }
+
+#sidebar{
+  width: 20%;
+  height: 100%;
+  color: grey;
+}

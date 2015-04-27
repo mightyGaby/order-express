@@ -1,8 +1,6 @@
 class Order < ActiveRecord::Base
   belongs_to(:party)
-  belongs_to(:guest)
-  has_many(:requests)
-  has_many(:items, through: :requests)
+  belongs_to(:item)
   def to_s
     "pizza!"
   end
