@@ -9,24 +9,28 @@ class PartiesController < Sinatra::Base
   get '/:id' do                       #A single party and all the orders it contains
     party = Party.find(params[:id].to_i)
     content_type :json
-    party.to_json
+    party.to_json(include :items)
   end
 
   post '/' do                          #Creates a new party
     content_type :json
-    Party.create(params[:party]).to_json
+    party = Party.create(params[:party])
+    content_type :json
+    party.to_json(include :items)
   end
 
   patch '/:id' do                     #Updates a party's details
     party = Party.find(params[:id].to_i)
     party.update(params[:party])
     content_type :json
+    party.to_json(include :items)
   end
 
   put '/:id' do                       #Updates a party's details
     party = Party.find(params[:id].to_i)
     party.update(params[:party])
     content_type :json
+    party.to_json(include :items)
   end
 
   delete '/:id' do                    #deletes a specific party
@@ -40,7 +44,7 @@ class PartiesController < Sinatra::Base
 #========== * BILLING API ROUTES
 
   get '/:id/receipt' do
-    Party.find(params[:id])
+    party = Party.find(params[:id])
     content_type :json
   end
 

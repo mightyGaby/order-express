@@ -8,6 +8,7 @@ CREATE TABLE parties (
   id SERIAL PRIMARY KEY,
   name VARCHAR(80),
   size INTEGER,
+  table_id INTEGER,
   status BOOLEAN
 );
 

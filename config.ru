@@ -22,9 +22,11 @@ require './models/party.rb'
 require './controllers/items_controller.rb'
 require './controllers/orders_controller.rb'
 require './controllers/parties_controller.rb'
+require './controllers/welcome_controller.rb'
 
 
 #========== * CONTROLLERS
 map('/api/items') { run ItemsController.new() }
 map('/api/orders') { run OrdersController.new() }
 map('/api/parties') { run PartiesController.new() }
+map('/') {run WelcomeController.new() }

@@ -1,12 +1,39 @@
 *{
   box-sizing: border-box;
 }
+
 body{
-  color: lightgrey;
+  margin: 0px;
+  background-size: cover;
+  background-image: url('http://www.sheepscotgeneral.com/wp-content/uploads/2013/10/Light-Wood-Background-Wallpaper.jpg');
+  background-color: rgba(255,255,255,.5);
 }
 
-#sidebar{
+#content-wrapper{
+  width: 70%;
+  float: right;
+  background-size: cover;
+  background-image: url('http://www.sheepscotgeneral.com/wp-content/uploads/2013/10/Light-Wood-Background-Wallpaper.jpg');
+}
+
+.navigation{
+  float: left;
   width: 20%;
-  height: 100%;
-  color: grey;
+  height: 900px;
+  /*background-image: url('http://kobegreatfalls.com/wp-content/uploads/2013/02/147230-brushed-metal-4-1920x12006.jpg');*/
+  background-image: url('http://fc04.deviantart.net/fs16/f/2007/209/a/e/metal_texture_6_by_wojtar_stock.jpg');
+  background-repeat: no-repeat;
+  max-width: 100%;
+  background-color: grey;
+  -webkit-box-shadow: 10px 3px 5px 0px rgba(0,0,0,.75);
+  -moz-box-shadow: 10px 3px 5px 0px rgba(0,0,0,.75);
+  box-shadow: 10px 3px 5px 0px rgba(0,0,0,.75);
+}
+
+nav{
+  position: center;
+  width: 50%;
+  font-family: 'helvetica',sans-serif;
+  font-size: 20px;
+  color: rgb(206, 16, 0);
 }
