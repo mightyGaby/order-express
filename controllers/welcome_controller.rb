@@ -11,7 +11,7 @@ class WelcomeController < Sinatra::Base
   end
 
   get '/' do
-    erb :index
+    erb :sign_in
   end
 
   #send someone to the main page if authenticated
