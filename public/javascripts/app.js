@@ -1,55 +1,70 @@
 console.log('models poppin bottles');
 
 var app = app || {};
-app.TestTemplate = $('#temp').html() //this is a function that gets the string format of temp
-//food model
+
+//      **** TEMPLATES ****
+
+app.itemTpl = $('#item-temp').html() //this is a function that gets the string format of temp
+
+
+//      **** MODELS ****
+
 app.ItemModel = Backbone.Model.extend({});
 
-//food collection
-app.ItemCollection = Backbone.Collection.extend(
+//      **** COLLECTIONS ****
+
+app.ItemCollection = Backbone.Collection.extend({
   url: '/api/items',
   model: app.ItemModel
-);
+  });
 
-//what is the data to display?
-//what element is being displayed?
-//what is the template to be used?
 
-app.ItemView = Backbone.View.extend(
-  initialize: {
-    this.listenTo(this.model,'change', this.render);
+//      **** VIEWS ****
+
+//model view
+app.ItemView = Backbone.View.extend({
+  initialize: function() {
+    // this.listenTo( this.model,'change', this.render);
+    console.log('hey!')
   },
-  template: _.template(app.TestTemplate),
+  template: _.template( app.itemTpl ),
   tagName: 'li',
-  render: {
+  render: function() {
     var data = this.model.attributes;
-    this.$el.append(this.template(data));
-    return this;
+    this.$el.html(this.template(data));
+    $('body').append(this.$el);
   }
-)
+});
 
-app.MenuView = Backbone.View.extend(
+//collection view
+
+app.MenuItemsView = Backbone.View.extend({
   initialize: function(options){
-
+    this.modelView = options.ItemView;
+    this.listenTo(this.collection,'sync', this.render)
   },
   render: function (){
     var models = this.collection.models
-
+    for (var i in models){
+      var singleView = new app.ItemView({model: models[i]});
+      singleView.render();
+      this.$el.append( singleView.$el );
+    }
   }
-
-)
+});
 
 
 $(document).ready(function(){
-  app.MenuView = new app.ItemCollection({
+
+  app.menuItems = new app.ItemCollection({
     model: app.ItemModel
   });
 
-  app. = new app.CollectionView({
-    modelView: app.PartyView,
-    collection: app.MenuView,
-    el: $('#party-list'),
+  app.menuDisplay = new app.MenuItemsView({
+    modelView: app.ItemView,
+    collection: app.menuItems,
+    el: $('#menu-items'),
   });
 
-  app.item.fetch();
+app.menuItems.fetch();      //collection fetches data
 });
