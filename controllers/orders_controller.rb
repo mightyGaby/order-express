@@ -1,7 +1,6 @@
 class OrdersController < Sinatra::Base
 
-  # enable  :sessions
-  # helpers Sinatra::SessionHelper
+  enable  :sessions
 
   post '/' do                          #Cretes a new order
     new_order = Order.create(params[:order])

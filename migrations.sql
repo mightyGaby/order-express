@@ -14,19 +14,18 @@ CREATE TABLE parties (
 
 -- CREATE TABLE guests (id SERIAL PRIMARY KEY,  party_id INTEGER REFERENCES parties(id));
 
-
 CREATE TABLE items (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
   description TEXT,
-  price NUMERIC(10,2),
+  cents INTEGER,
   restriction BOOLEAN
 );
 
-
-CREATE TABLE orders (s
+CREATE TABLE orders (
   id SERIAL PRIMARY KEY,
   party_id INTEGER REFERENCES parties(id),
+  item_id INTEGER references items(id),
   paid BOOLEAN,
   seat INTEGER
 );
@@ -37,3 +36,10 @@ CREATE TABLE orders (s
 --   guest_id INTEGER REFERENCES guests(id),
 --   order_id INTEGER REFERENCES orders(id)
 -- );
+
+CREATE TABLE user (
+  id SERIAL PRIMARY KEY,
+  manager BOOLEAN,
+  username VARCHAR (255)
+  password_hash VARCHAR(255)
+);

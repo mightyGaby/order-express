@@ -11,22 +11,26 @@ ActiveRecord::Base.establish_connection(
 )
 
 #========== * HELPER FUNCTIONS
-##session helpers
+require './helpers/session_helpers'
 
 #========== * MODELS
-require './models/item.rb'
-require './models/order.rb'
-require './models/party.rb'
+require './models/item'
+require './models/order'
+require './models/party'
+require './models/user'
 
 #========== * CONTROLLERS
-require './controllers/items_controller.rb'
-require './controllers/orders_controller.rb'
-require './controllers/parties_controller.rb'
-require './controllers/welcome_controller.rb'
+require './controllers/items_controller'
+require './controllers/orders_controller'
+require './controllers/parties_controller'
+require './controllers/welcome_controller'
+require './controllers/sessions_controller'
 
 
 #========== * CONTROLLERS
 map('/api/items') { run ItemsController.new() }
 map('/api/orders') { run OrdersController.new() }
 map('/api/parties') { run PartiesController.new() }
+map('/sessions') { run SessionsController.new() }
+
 map('/') {run WelcomeController.new() }
