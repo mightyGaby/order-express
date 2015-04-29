@@ -58,9 +58,18 @@ class PartiesController < Sinatra::Base
     end
     total.to_json
 
-    # items.compact.map{|item| item.price}.reduce(0, :+)
+  end
+
+  patch '/:id/checkout' do
+    party = Party.find(params[:id])
+    party.update(params[:party])
+    party.to_json
   end
 
 
-
+  put '/:id/checkout' do
+    party = Party.find(params[:id])
+    party.update(params[:party])
+    party.to_json
+  end
 end
