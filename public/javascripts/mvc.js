@@ -4,8 +4,8 @@ var app = app || {};
 
 //      **** TEMPLATES ****
 
-app.itemTpl = $('#item-temp').html() //this is a function that gets the string format of temp
-app.partyTpl = $('#party-temp').html() //this is a function that gets the string format of temp
+// app.itemTpl = $('#item-temp').html() //this is a function that gets the string format of temp
+// app.partyTpl = $('#party-temp').html() //this is a function that gets the string format of temp
 
 
 //      **** MODELS ****
@@ -33,22 +33,22 @@ app.ItemView = Backbone.View.extend({
     this.listenTo( this.model,'change', this.render);
     this.listenTo( this.model, 'delete', this.remove);
   },
-  template: _.template( app.itemTpl ),
-  tagName: 'li',
-  className: 'item',
-
+  template: _.template('<li class = "items"> <%= name %> </li>'),
   render: function() {
     var data = this.model.attributes;
     this.$el.html(this.template(data));
     $('body').append(this.$el);
   },
   events: {
-    'click .item': 'selectItem'
+    'click .items': 'selectItem'
     },
     selectItem: function(){
       this.$el.addClass('selected')
       app.itemSelection = this.model;
+      console.log(app.itemSelection)
+      alert("DINNER BELL!");
     }
+
 });
 
 //party model view
@@ -59,10 +59,7 @@ app.PartyView = Backbone.View.extend({
     this.listenTo( this.model, 'delete', this.remove);
   },
 
-  template: _.template( app.partyTpl ),
-  tagName: 'li',
-  className: 'party',
-
+  template: _.template('<li class="party"> <%= name %> party of <%= size %> </li>'),
   render: function() {
     var data = this.model.attributes;
     this.$el.html(this.template(data));
@@ -73,18 +70,16 @@ app.PartyView = Backbone.View.extend({
 
   renderItemsList: function(){
     var items = this.model.get('items')
-    var itemsList = $('<ul>');
+    var itemsList = $('<ul class="party-order">');
     for (i in items){
-      itemsList.append($('<li>').text(items[i]['name']));
+      itemsList.append($('<li class="party-order-item">').text(items[i]['name']));
     }
     this.$el.append(itemsList);
   },
 
   events:{
     'click .party': 'selectParty'
-    // 'event css-selector': 'functionToCall'
   },
-
   selectParty: function(){
     console.log('wtf')
     alert("THIS PARTY IS LITERALLY POPPIN");
@@ -92,11 +87,7 @@ app.PartyView = Backbone.View.extend({
 });
 
 
-
-
-
 //item collection view
-
 app.MenuItemsView = Backbone.View.extend({
 
   initialize: function(options){

@@ -10,16 +10,16 @@ class WelcomeController < Sinatra::Base
     binding.pry
   end
 
-  get '/' do
-    erb :index
-  end
-
-  # get '/admin' do
-  #   if current_user
-  #     erb :index
-  #   else
-  #     erb :admin_not_authenticated
-  #   end
+  # get '/' do
+  #   erb :sign_in
   # end
+
+  get '/' do
+    if current_user
+      erb :index
+    else
+      erb :sign_in
+    end
+  end
 
 end

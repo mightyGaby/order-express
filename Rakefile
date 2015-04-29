@@ -21,8 +21,7 @@ namespace :db do
   desc "Create Admin User"
   task :create_user do
     user = User.new({username: 'blade'})
-    user.manager=TRUE
-    user.password_hash='fairtrade1234'
+    user.password='fairtrade1234'
     user.save!
   end
 

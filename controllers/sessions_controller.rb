@@ -11,9 +11,9 @@ class SessionsController < Sinatra::Base
       user = User.find_by(:username => params[:username])
       if user && user.password == params[:password]
         session[:current_user] = user.id
-        redirect '/admin'
-      else
         redirect '/'
+      else
+        redirect '/signin'
       end
     end
 
