@@ -34,20 +34,19 @@ $(document).ready(function(){
   $('#place-order').on('click', function(){  // Creating an event listener
 
       var partyId = app.partySelection.get('id')       // Obtain the id from the selected party
-      var foodId = app.itemSelection.get('id')        // Obtain the id from the selected food
+      var itemId = app.itemSelection.get('id')        // Obtain the id from the selected food
+
        $.ajax({
          method: 'post',
          url: '/api/orders',
-         data: {party_id: partyId, food_id: foodId},
+         data: {order: {party_id: partyId, item_id: itemId}},
          success: function() {
-           console.log()
            app.parties.fetch( {reset: true} );  // Reset the party list... update all data
 
-          //  $('.selected-food').removeClass('selected-food');  // remove selected class for style
-          //  $('.selected-party').removeClass('selected-party');  // remove selected class for style
+           $('.selected-food').removeClass('selected-food');  // remove selected class for style
+           $('.selected-party').removeClass('selected-party');  // remove selected class for style
          }
        })
-
 
       });
 

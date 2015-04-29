@@ -5,95 +5,11 @@
 body{
   margin: 0px;
   background-size: cover;
-  background-image: url('http://www.sheepscotgeneral.com/wp-content/uploads/2013/10/Light-Wood-Background-Wallpaper.jpg');
+  /*background-image: url('http://www.sheepscotgeneral.com/wp-content/uploads/2013/10/Light-Wood-Background-Wallpaper.jpg');*/
   background-color: rgba(255,255,255,.5);
 }
 
-/*#content-wrapper{
-  background: rgba(255,255,255,0.3);
-  height: 900px;
-  width: 80%;
-  float: right;
-  background-size: cover;
-  /*background-image: url('http://www.sheepscotgeneral.com/wp-content/uploads/2013/10/Light-Wood-Background-Wallpaper.jpg');*/
-}
-
-
-.main-nav{
+#sidebar{
+  width: 25%;
   float: left;
-  width: 15%;
-  height: 900px;
-  background: rgba(255,255,255,0.3);
-  background-image: url('http://fc04.deviantart.net/fs16/f/2007/209/a/e/metal_texture_6_by_wojtar_stock.jpg');
-  background-repeat: no-repeat;
-  max-width: 100%;
-  -webkit-box-shadow: 10px 3px 5px 0px rgba(0,0,0,.75);
-  -moz-box-shadow: 10px 3px 5px 0px rgba(0,0,0,.75);
-  box-shadow: 10px 3px 5px 0px rgba(0,0,0,.75);
-}
-
-#tables{
-  /*float: left;
-  width: 15%;
-  height: 900px;
-  background: lightgrey;
-  -webkit-box-shadow: 10px 3px 5px 0px rgba(0,0,0,.75);
-  -moz-box-shadow: 10px 3px 5px 0px rgba(0,0,0,.75);
-  box-shadow: 10px 3px 5px 0px rgba(0,0,0,.75);*/
-}
-
-
-nav{
-  position: center;
-  width: 50%;
-  font-family: 'helvetica',sans-serif;
-  font-size: 20px;
-  color: rgb(206, 16, 0);
-}
-
-.party{
-  height: 100px;
-  width: 100px;
-  margin: 10px;
-  padding: 10px;
-  font-family: 'helvetica', sans-serif;
-  font-size: 16px;
-  background-color: lightblue;
-  box-shadow: 10px 3px 5px 0px rgba(0,0,0,.75);
-  /*border: black 1px solid;*/
-  text-decoration: none;
-}
-
-.items{
-  height: 100px;
-  width: 100px;
-  margin: 10px;
-  padding: 10px;
-  background-color: red;
-  color: white;
-  font-family: 'helvetica', sans-serif;
-  font-size: 20px;
-  box-shadow: 10px 3px 5px 0px rgba(0,0,0,.75);
-  /*border: black 1px solid;*/
-  text-decoration: none;
-
-}
-
-.tables{
-  text-decoration: none;
-}
-
-
-.menu{
-  float: left;
-  text-decoration: none;
-}
-
-
-.selected{
-  color: pink;
-}
-
-#place-order{
-  float: right;
 }

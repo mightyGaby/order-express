@@ -2,8 +2,16 @@ class OrdersController < Sinatra::Base
 
   enable  :sessions
 
+  def order_params
+    return params[:order] if params[:order]
+    body_data = {}
+    @request_body ||= request.body.read.to_s
+    body_data = (JSON(@request_body)) unless @request_body.empty?
+    body_data = body_data['order'] || body_data
+  end
+
   post '/' do                          #Cretes a new order
-    new_order = Order.create(params[:order])
+    new_order = Order.create(order_params)
     content_type :json
   end
 
