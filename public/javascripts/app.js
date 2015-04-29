@@ -42,7 +42,6 @@ $(document).ready(function(){
          data: {order: {party_id: partyId, item_id: itemId}},
          success: function() {
            app.parties.fetch( {reset: true} );  // Reset the party list... update all data
-
            $('.selected-food').removeClass('selected-food');  // remove selected class for style
            $('.selected-party').removeClass('selected-party');  // remove selected class for style
          }

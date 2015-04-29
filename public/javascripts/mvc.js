@@ -41,6 +41,7 @@ app.ItemView = Backbone.View.extend({
   },
   events: {
     'click .items': 'selectItem'
+    // 'tap .items': 'selectItem'
     },
     selectItem: function(){
       $('.selected-item').removeClass('selected-item')

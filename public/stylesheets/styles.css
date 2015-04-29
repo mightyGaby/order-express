@@ -11,5 +11,31 @@ body{
 
 #sidebar{
   width: 25%;
+  height: 900px;
   float: left;
+  background-color: grey;
+  -webkit-box-shadow: 10px -1px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px -1px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px -1px 5px 0px rgba(0,0,0,0.75);
+}
+
+#tables{
+  width: 25%;
+  height: 900px;
+  float: left;
+  background-color: lightgrey;
+}
+
+#content-wrapper{
+  width: 50%;
+  height: 900px;
+  float: left;
+}
+
+.selected-party{
+  color: blue;
+}
+
+.selected-item{
+  color: green;
 }
