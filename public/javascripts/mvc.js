@@ -43,10 +43,10 @@ app.ItemView = Backbone.View.extend({
     'click .items': 'selectItem'
     },
     selectItem: function(){
-      this.$el.addClass('selected')
+      $('.selected-item').removeClass('selected-item')
+      this.$el.addClass('selected-item')
       app.itemSelection = this.model;
       console.log(app.itemSelection)
-      alert("DINNER BELL!");
     }
 
 });
@@ -81,8 +81,10 @@ app.PartyView = Backbone.View.extend({
     'click .party': 'selectParty'
   },
   selectParty: function(){
-    console.log('wtf')
-    alert("THIS PARTY IS LITERALLY POPPIN");
+    $('.selected-party').removeClass('selected-party')
+    this.$el.addClass('selected-party')
+    app.partySelection = this.model;
+    console.log(app.partySelection)
   }
 });
 

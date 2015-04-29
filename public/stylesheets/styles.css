@@ -93,3 +93,7 @@ nav{
 .selected{
   color: pink;
 }
+
+#place-order{
+  float: right;
+}

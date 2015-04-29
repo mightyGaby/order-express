@@ -31,22 +31,23 @@ $(document).ready(function(){
 
 
 
-
-
-
   $('#place-order').on('click', function(){  // Creating an event listener
 
-      // Obtain the id from the selected party
-       // Obtain the id from the selected food
+      var partyId = app.partySelection.get('id')       // Obtain the id from the selected party
+      var foodId = app.itemSelection.get('id')        // Obtain the id from the selected food
+       $.ajax({
+         method: 'post',
+         url: '/api/orders',
+         data: {party_id: partyId, food_id: foodId},
+         success: function() {
+           console.log()
+           app.parties.fetch( {reset: true} );  // Reset the party list... update all data
 
-    // make an ajax call
-        // to make a new order
-         //  the route to hit
-        // data to make order
-        // Reset the party list... update all data
+          //  $('.selected-food').removeClass('selected-food');  // remove selected class for style
+          //  $('.selected-party').removeClass('selected-party');  // remove selected class for style
+         }
+       })
 
-        // remove selected class for style
-         // remove selected class for style
 
       });
 
