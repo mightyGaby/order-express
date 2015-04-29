@@ -9,7 +9,7 @@ body{
   background-color: rgba(255,255,255,.5);
 }
 
-#content-wrapper{
+/*#content-wrapper{
   background: rgba(255,255,255,0.3);
   height: 900px;
   width: 80%;
@@ -17,6 +17,7 @@ body{
   background-size: cover;
   /*background-image: url('http://www.sheepscotgeneral.com/wp-content/uploads/2013/10/Light-Wood-Background-Wallpaper.jpg');*/
 }
+
 
 .main-nav{
   float: left;
@@ -31,10 +32,64 @@ body{
   box-shadow: 10px 3px 5px 0px rgba(0,0,0,.75);
 }
 
+#tables{
+  /*float: left;
+  width: 15%;
+  height: 900px;
+  background: lightgrey;
+  -webkit-box-shadow: 10px 3px 5px 0px rgba(0,0,0,.75);
+  -moz-box-shadow: 10px 3px 5px 0px rgba(0,0,0,.75);
+  box-shadow: 10px 3px 5px 0px rgba(0,0,0,.75);*/
+}
+
+
 nav{
   position: center;
   width: 50%;
   font-family: 'helvetica',sans-serif;
   font-size: 20px;
   color: rgb(206, 16, 0);
+}
+
+.party{
+  height: 100px;
+  width: 100px;
+  margin: 10px;
+  padding: 10px;
+  font-family: 'helvetica', sans-serif;
+  font-size: 16px;
+  background-color: lightblue;
+  box-shadow: 10px 3px 5px 0px rgba(0,0,0,.75);
+  /*border: black 1px solid;*/
+  text-decoration: none;
+}
+
+.item{
+  height: 100px;
+  width: 100px;
+  margin: 10px;
+  padding: 10px;
+  background-color: red;
+  color: white;
+  font-family: 'helvetica', sans-serif;
+  font-size: 20px;
+  box-shadow: 10px 3px 5px 0px rgba(0,0,0,.75);
+  /*border: black 1px solid;*/
+  text-decoration: none;
+
+}
+
+.tables{
+  text-decoration: none;
+}
+
+
+.menu{
+  float: left;
+  text-decoration: none;
+}
+
+
+.selected{
+  color: pink;
 }

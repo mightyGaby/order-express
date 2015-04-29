@@ -11,10 +11,15 @@ class WelcomeController < Sinatra::Base
   end
 
   get '/' do
-    erb :sign_in
+    erb :index
   end
 
-  #send someone to the main page if authenticated
-
+  # get '/admin' do
+  #   if current_user
+  #     erb :index
+  #   else
+  #     erb :admin_not_authenticated
+  #   end
+  # end
 
 end

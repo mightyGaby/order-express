@@ -12,33 +12,37 @@
 
   <body>
     <div class='sidebar'>
-    <nav id='main-nav'>Main Nav</nav>
+    <nav id='main-nav'></nav>
     </div>
 
-    <!-- <div class='sidebar'>
-      <ul class='side-list' id='tables-list'>All Tables</ul>
-      <ul class='side-list' id='menu-list'>Menu Items</ul>
-    </div> -->
+    <div class='sidebar' id='tables'>
+      <ul class='side-list' id='party-list'>All Tables</ul>
+      <!-- <ul class='side-list' id='menu-list'>Menu Items</ul> -->
+    </div>
 
     <div id='content-wrapper'>
-      <div class='single-table' id='table-details' ></div>
+      <!-- <div class='single-table' id='table-details' ></div>
       <div class='single-table' id='table-order' ></div>
-      <div class='single-table' id='guest-requests' ></div>
-      <div class='menu' id='menu-items'></div>
-      <div class='menu' id='party-list'></div>
+      <div class='single-table' id='guest-requests' ></div> -->
+    <div class='menu'>
+      <ul id='menu-items'></ul>
+      </div>
     </div>
+
 
     <!-- templates -->
 
     <script type='text/template' id='item-temp'>
-      <li> <%%= name %>: <%%= description %></li>
+      <!-- <li> <%%= name %>: <%%= description %></li> -->
+      <%%= name %>
     </script>
 
     <script type='text/template' id='party-temp'>
-      <li> <%%= name %> party of <%%= size %></li>
+      <%%= name %> party of <%%= size %>
     </script>
 
-
+    <script type= "text/javascript" src='/javascripts/mvc.js'></script>
     <script type= "text/javascript" src='/javascripts/app.js'></script>
+
   </body>
 </html>

@@ -1,6 +1,6 @@
 module Sinatra
   module SessionHelper
-    
+
     def current_user
       if session[:current_user]
         User.find(session[:current_user])
@@ -10,7 +10,7 @@ module Sinatra
     end
 
     def authenticate_api!
-      halt 403 unless current_user
+      redirect '/' unless current_user
     end
 
   end
