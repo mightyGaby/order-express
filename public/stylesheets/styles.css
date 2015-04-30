@@ -68,9 +68,6 @@ nav{
   transform: translateY(-50%);
 }
 
-.selected-party {
-  color: lightblue;
-}
 
 .selected-table {
   color: lightblue;
@@ -109,9 +106,8 @@ float: left;
 }
 
 .menu{
-  width: 100%;
   postition: relative;
-  bottom: 10;
+  margin: 0px auto;
 }
 
 #place-order{
@@ -155,4 +151,9 @@ float: left;
   width: 100%;
   position: relative;
   left: 15%;
+}
+
+#menu-items{
+  float: left;
+  font-size: 24px;
 }

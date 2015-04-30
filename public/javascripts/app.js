@@ -3,6 +3,8 @@ console.log('its about to go down');
 var app = app || {};
 
 $(document).ready(function(){
+  $('#menu-items').hide();
+
   // create collections
   app.menuItems = new app.ItemCollection({
     model: app.ItemModel
