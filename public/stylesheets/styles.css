@@ -1,12 +1,13 @@
 *{
   box-sizing: border-box;
+  font-family: 'helvetica', sans-serif;
 }
 
 body{
   margin: 0px;
   background-size: cover;
   /*background-image: url('http://www.sheepscotgeneral.com/wp-content/uploads/2013/10/Light-Wood-Background-Wallpaper.jpg');*/
-  background-image: url('http://yevma.com/wp-content/uploads/2015/02/white-wood.jpg');
+  /*background-image: url('http://yevma.com/wp-content/uploads/2015/02/white-wood.jpg');*/
   background-color: lightgrey);
 }
 
@@ -69,7 +70,6 @@ nav{
   color: blue;
 }
 
-
 .selected-item{
   color: blue;
 }
@@ -89,23 +89,25 @@ float: left;
   height: 50%;
 }
 
+#top{
+  float: left;
+}
+
+#bottom{
+  clear: both;
+}
 
 .party{
   font-family: 'Helvetica', sans-serif;
   font-size: 20px;
 }
 
-#stage{
-  width: 50%;
-  height: 50%;
-  float: left;
-  position: relative;
-}
-
 .menu{
+  width: 100%;
   postition: relative;
+  bottom: 10;
 }
 
-#kitchen-view{
-  position: relative;
+#place-order{
+  display: none;
 }

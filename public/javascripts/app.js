@@ -19,29 +19,18 @@ $(document).ready(function(){
     el: $('#menu-items'),
   });
 
-  app.partyDisplay = new app.GeneralListView({
-    modelView: app.PartyView,
-    collection: app.partyList,
-    el: $('#party-list'),
-  });
-
   app.tableDisplay = new app.TableListView({
     modelView: app.TableView,
     collection: app.partyList,
     el: $('#table-list'),
   });
 
-    app.partyOrderDisplay = new app.GeneralListView({
-      modelView: app.PartyView,
-      collection: app.partyList,
-      el: $('#party-list'),
-    });
+  app.partyOrderDisplay = new app.GeneralListView({
+    modelView: app.PartyView,
+    collection: app.partyList,
+    el: $('#party-list'),
+  });
 
-    app.sidemenuDisplay = new app.GeneralListView({
-      modelView: app.ItemView,
-      collection: app.menuItems,
-      el: $('#side-menu'),
-    });
 
   // app.menuItems.fetch();      //collection fetches data
   app.partyList.fetch();

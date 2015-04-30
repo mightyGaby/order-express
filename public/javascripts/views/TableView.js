@@ -30,6 +30,9 @@ app.TableView = Backbone.View.extend({
 
       $('#kitchen-view').hide();
       $('#stage').show();
+      $('#place-order').show();
+      $('#menu-items').show();
+
 
       showView.render();
         // Clear the stage
