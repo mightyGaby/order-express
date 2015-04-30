@@ -6,7 +6,7 @@ class PartiesController < Sinatra::Base
   get '/' do                           #All parties
     parties = Party.all
     content_type :json
-    parties.to_json
+    parties.to_json(include: :items)
   end
 
   get '/:id' do                       #A single party and all the orders it contains

@@ -12,6 +12,7 @@ body{
 #sidebar{
   width: 25%;
   height: 900px;
+  z-index: 10;
   float: left;
   background-color: grey;
   -webkit-box-shadow: 10px -1px 5px 0px rgba(0,0,0,0.75);

@@ -13,13 +13,13 @@ $(document).ready(function(){
   });
 
   // //create views
-  app.menuDisplay = new app.MenuItemsView({
+  app.menuDisplay = new app.GeneralListView({
     modelView: app.ItemView,
     collection: app.menuItems,
     el: $('#menu-items'),
   });
 
-  app.partyDisplay = new app.PartyListView({
+  app.partyDisplay = new app.GeneralListView({
     modelView: app.PartyView,
     collection: app.partyList,
     el: $('#party-list'),
@@ -29,7 +29,9 @@ $(document).ready(function(){
   app.partyList.fetch();
 
 
-
+  $('body').click(function(){
+    $('.party-order').hide();
+  });
 
   $('#place-order').on('click', function(){  // Creating an event listener
 
@@ -48,5 +50,7 @@ $(document).ready(function(){
        })
 
       });
+
+
 
 });
