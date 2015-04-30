@@ -11,55 +11,12 @@
   </head>
 
   <body>
-    <div id='sidebar'>
-      <nav id='main-nav'>
-      <li class= 'nav-item' id='table-url'> Tables </li>
 
-      <li class= 'nav-item' id='menu-url'> Menu </li>
-
-      <li class= 'nav-item' >Register</li>
-
-      <form class= 'nav-item' action="/sessions" method='post'>
-        <input type="hidden" name='_method' value='delete'>
-        <input type="submit" value='log-out'>
-      </form>
-      </nav>
-    </div>
-
-
-    <!-- <ul class='side-list' id='party-list'>All Tables</ul> -->
-    <div id='content-wrapper'>
-
-      <div class='lists' id='tables-list'>
-        <ul class='side-list' id='table-list'>All Tables</ul>
-      </div>
-
-      <div class='menu'>
-      <ul id='menu-items'>
-      </ul>
-      </div>
 
       <section id="party-list">
       </section>
+  </body>
 
-
-      <button id='place-order'>
-        Order
-      </button>
-
-      </div>
-
-
-    <!-- templates -->
-
-    <!-- <script type='text/template' id='item-temp'>
-    <li class = 'items'> <%%= name %> </li>
-    </script>
-
-    <script type='text/template' id='party-temp'>
-      <%%= name %> party of <%%= size %>
-    </script>
- -->
  <!-- ****** Backbone Models ****** -->
 <script src='/javascripts/models/ItemModel.js'></script>
 <script src='/javascripts/models/PartyModel.js'></script>
