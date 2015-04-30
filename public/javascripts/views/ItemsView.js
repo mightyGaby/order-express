@@ -7,7 +7,7 @@ app.ItemView = Backbone.View.extend({
     this.listenTo( this.model, 'delete', this.remove);
   },
 
-  template: _.template('<li class = "items"> <%= name %> </li>'),
+  template: _.template('<li class = "items"> <%= name %>  ... <%= cents %> </li>'),
   render: function() {
     var data = this.model.attributes;
     this.$el.append(this.template(data));

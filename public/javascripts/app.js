@@ -31,33 +31,47 @@ $(document).ready(function(){
     el: $('#table-list'),
   });
 
-  // app.partyOrderDisplay = new app.GeneralListView({
-  //   modelView: app.PartyView,
-  //   collection: app.partyList,
-  //   el: $('#party-order'),
-  // });
+    app.partyOrderDisplay = new app.GeneralListView({
+      modelView: app.PartyView,
+      collection: app.partyList,
+      el: $('#party-list'),
+    });
 
-  app.menuItems.fetch();      //collection fetches data
+    app.sidemenuDisplay = new app.GeneralListView({
+      modelView: app.ItemView,
+      collection: app.menuItems,
+      el: $('#side-menu'),
+    });
+
+  // app.menuItems.fetch();      //collection fetches data
   app.partyList.fetch();
 
-  // $('#party-list').click(function(){
-  //   $('.party-order').toggle();
-  // });
+  $('#party-list').click(function(){
+    $('.party-order').toggle();
+  });
 
   $('#table-url').click(function(){
     $('#tables-list').fadeToggle("slow");
   })
 
   $('#menu-url').click(function(){
-    $('#tables-list').hide();
-    $('#menu-items').toggle();
+    app.menuItems.fetch();      //collection fetches data
+    $('#menu-items').show();
+    $('#kitchen-view').hide();
+    $('#stage').hide();
   })
+
+  $('#kitchen-url').click(function(){
+    $('#kitchen-view').show();
+    $('#menu-items').hide();
+  });
+
+
 
   // $('.tables').on('click', function(){
   //   //display single party view
   //   $('#table-view').toggle();
   // })
-
 
 
   $('#place-order').on('click', function(){  // Creating an event listener

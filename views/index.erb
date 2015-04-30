@@ -5,6 +5,7 @@
     <title>order express</title>
 
     <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="/stylesheets/tableview.css">
     <script src='/javascripts/lib/jquery.js'></script>
     <script src='/javascripts/lib/underscore.js'></script>
     <script src='/javascripts/lib/backbone.js'></script>
@@ -12,6 +13,8 @@
 
   <body>
     <div id='sidebar'>
+      <li><a class ='nav-item' href="/"> Home </a></li>
+
       <nav id='main-nav'>
       <li class= 'nav-item' id='table-url'> Tables </li>
 
@@ -19,7 +22,7 @@
       <li class= 'nav-item' id='kitchen-url'> Kitchen </li>
       <li class= 'nav-item' >Register</li>
 
-      <li class= 'nav-item' id='edit-url' >Edit Menu</li>
+      <li class= 'nav-item' id='edit-url'>Edit Menu</li>
       <form class= 'nav-item' action="/sessions" method='post'>
         <input type="hidden" name='_method' value='delete'>
         <input type="submit" value='log-out'>
@@ -35,18 +38,24 @@
         <ul class='side-list' id='table-list'>All Tables</ul>
       </div>
 
+      <div id= 'stage'>
+        <div id='party-stage'>
+        </div>
+
+      </div>
+
       <div class='menu'>
       <ul id='menu-items'>
       </ul>
       </div>
 
-      <section id="party-list">
-      </section>
+      <div id='kitchen-view'>
+        <h1> All Orders </h1>
+        <div id="party-list">
+        </div>
+      </div>
 
 
-      <button id='place-order'>
-        Order
-      </button>
 
       </div>
 

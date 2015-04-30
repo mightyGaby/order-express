@@ -10,9 +10,9 @@ class WelcomeController < Sinatra::Base
     binding.pry
   end
 
-  # get '/' do
-  #   erb :sign_in
-  # end
+  get '/' do
+    erb :index
+  end
 
   get '/' do
     if current_user
@@ -21,5 +21,17 @@ class WelcomeController < Sinatra::Base
       erb :sign_in
     end
   end
+
+  get '/edit' do
+    erb :sign_in
+  end
+
+  # get '/edit' do
+  #   if current_user
+  #     erb :edit_menu
+  #   else
+  #     erb :sign_in      #make sing-in page go to edit index...make link to /edit in menu
+  #   end
+  # end
 
 end

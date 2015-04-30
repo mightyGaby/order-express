@@ -13,16 +13,27 @@ app.TableView = Backbone.View.extend({
     $('body').append(this.$el);
   },
   events: {
-    'click .tables': 'selectTable'
-    // 'tap .items': 'selectItem'
+    'click .tables': 'selectTable',
+    'tap .tables': 'selectTable',
     },
     selectTable: function(){
       $('.selected-table').removeClass('selected-table')
       this.$el.addClass('selected-table')
       app.tableSelection = this.model;
+      console.log(app.tableSelection)
       app.partySelection = app.tableSelection
 
+      var showView = new app.PartyView({
+        el: $('#party-stage'),
+        model: app.partySelection,
+      });
 
+      $('#kitchen-view').hide();
+      $('#stage').show();
+
+      showView.render();
+        // Clear the stage
+        // Populate all the view
     }
 
 });
