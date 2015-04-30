@@ -12,19 +12,26 @@
 
   <body>
     <div id='sidebar'>
-      <nav id='main-nav'></nav>
+      <nav id='main-nav'>
+      <li id='table-url'>Tables</li>
+      <li id='menu-url'>Menu</li>
+      <li>Register</li>
+      <li>Log out</li>
+      </nav>
     </div>
 
-    <div class='lists' id='tables'>
-      <ul class='side-list' id='party-list'>All Tables</ul>
-      <!-- <ul class='side-list' id='menu-list'>Menu Items</ul> -->
-    </div>
 
+    <!-- <ul class='side-list' id='party-list'>All Tables</ul> -->
     <div id='content-wrapper'>
+
+      <div class='lists' id='tables-list'>
+        <ul class='side-list' id='table-list'>All Tables</ul>
+      </div>
 
       <div class='menu'>
       <ul id='menu-items'>
       </ul>
+
       <button id='place-order'>
         Order
       </button>
@@ -54,6 +61,8 @@
 <!-- ****** Backbone Views ****** -->
 <script src='/javascripts/views/ItemsView.js'></script>
 <script src='/javascripts/views/PartyView.js'></script>
+<script src='/javascripts/views/TableListView.js'></script>
+<script src='/javascripts/views/TableView.js'></script>
 <script src='/javascripts/views/GeneralListView.js'></script>
 
 <!-- ****** Javascript App ****** -->

@@ -10,9 +10,8 @@ body{
 }
 
 #sidebar{
-  width: 25%;
+  width: 15%;
   height: 900px;
-  z-index: 10;
   float: left;
   background-color: grey;
   -webkit-box-shadow: 10px -1px 5px 0px rgba(0,0,0,0.75);
@@ -20,23 +19,46 @@ body{
   box-shadow: 10px -1px 5px 0px rgba(0,0,0,0.75);
 }
 
-#tables{
+#content-wrapper{
+  width: 85%;
+  height: 900px;
+  float: left;
+}
+
+#tables-list{
   width: 25%;
   height: 900px;
   float: left;
   background-color: lightgrey;
+  -webkit-box-shadow: inset 10px -1px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 10px -1px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: inset 10px -1px 5px 0px rgba(0,0,0,0.75);
+
 }
 
-#content-wrapper{
-  width: 50%;
-  height: 900px;
-  float: left;
+
+
+li{
+  list-style-type: none;
+  text-align: center;
+  margin: 20px;
 }
 
-.selected-party{
+nav{
+  position: relative;
+  top: 25%;
+  transform: translateY(-50%);
+}
+
+.selected-party {
   color: blue;
 }
 
+.selected-table {
+  color: blue;
+}
+
+
 .selected-item{
-  color: green;
+  color: blue;
 }

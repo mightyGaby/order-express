@@ -25,13 +25,29 @@ $(document).ready(function(){
     el: $('#party-list'),
   });
 
+  app.tableDisplay = new app.TableListView({
+    modelView: app.TableView,
+    collection: app.partyList,
+    el: $('#table-list'),
+  });
+
   app.menuItems.fetch();      //collection fetches data
   app.partyList.fetch();
 
-
-  $('body').click(function(){
-    $('.party-order').hide();
+  $('#party-list').click(function(){
+    $('.party-order').toggle();
   });
+
+  $('#table-url').click(function(){
+    $('#tables-list').toggle();
+  })
+
+  $('#menu-url').click(function(){
+    $('#tables-list').hide();
+    $('#menu-items').toggle();
+  })
+
+
 
   $('#place-order').on('click', function(){  // Creating an event listener
 
@@ -50,7 +66,5 @@ $(document).ready(function(){
        })
 
       });
-
-
 
 });
