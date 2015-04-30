@@ -15,7 +15,7 @@ body{
   width: 15%;
   height: 900px;
   float: left;
-  background-color: grey;
+  background-color: lightgrey;
   -webkit-box-shadow: 10px -1px 5px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px -1px 5px 0px rgba(0,0,0,0.75);
   box-shadow: 10px -1px 5px 0px rgba(0,0,0,0.75);
@@ -69,15 +69,15 @@ nav{
 }
 
 .selected-party {
-  color: blue;
+  color: lightblue;
 }
 
 .selected-table {
-  color: blue;
+  color: lightblue;
 }
 
 .selected-item{
-  color: blue;
+  color: lightblue;
 }
 
 table{
@@ -112,8 +112,6 @@ float: left;
   width: 100%;
   postition: relative;
   bottom: 10;
-  display: none;
-
 }
 
 #place-order{
@@ -134,9 +132,16 @@ float: left;
   padding: 40px;
   margin: 50px auto;
   text-align: center;
-  background-color: grey;
+  font-size: 24px;
+  font-family: , sans-serif;
+  background-color: rgba(0,0,0,0.2);
   position: relative;
   bottom: 10;
+  -webkit-box-shadow:  2px 3px 0px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow:  2px 3px 0px 0px rgba(0,0,0,0.3);
+  box-shadow: px  2px 3px 0px rgba(0,0,0,0.3);
+
+
 }
 
 .side-list{

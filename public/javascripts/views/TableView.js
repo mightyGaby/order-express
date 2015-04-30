@@ -30,7 +30,6 @@ app.TableView = Backbone.View.extend({
 
       $('#kitchen-view').hide();
       $('#place-order').show();
-      $('#menu-items').show();
 
 
       showView.render();

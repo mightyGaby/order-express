@@ -43,21 +43,19 @@ $(document).ready(function(){
     $('#tables-list').fadeToggle("slow");
   });
 
-  $('#menu-url').click(function(){
-    app.menuItems.fetch();      //collection fetches data
-    $('#menu-items').show();
-    $('#kitchen-view').hide();
-    $('#party-list').hide();
-
-  });
-
   $('#kitchen-url').click(function(){
     $('#kitchen-view').show();
     $('#party-list').show();
-    $('#menu-items').hide();
     $('party-stage').hide();
+    $('#menu-items').hide();
+
   });
 
+  $('#menu-url').click(function(){
+    $('#kitchen-view').hide();
+    $('#party-list').hide();
+    $('#menu-items').show();
+  });
 
 
   $('#place-order').on('click', function(){  // Creating an event listener
