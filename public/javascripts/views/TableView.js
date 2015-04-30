@@ -6,7 +6,7 @@ app.TableView = Backbone.View.extend({
     this.listenTo( this.model,'change', this.render);
     this.listenTo( this.model, 'delete', this.remove);
   },
-  template: _.template('<li class = "tables"> <%= id %> </li>'),
+  template: _.template('<li class="tables"><%= id %></li>'),
   render: function() {
     var data = this.model.attributes;
     this.$el.html(this.template(data));
@@ -29,7 +29,6 @@ app.TableView = Backbone.View.extend({
       });
 
       $('#kitchen-view').hide();
-      $('#stage').show();
       $('#place-order').show();
       $('#menu-items').show();
 

@@ -10,17 +10,38 @@
     <script src='/javascripts/lib/backbone.js'></script>
 
   </head>
-  <body>
+  <body id= 'edit'>
+  <div id='sidebar'>
+    <li><a class ='nav-item' href="/"> Home </a></li>
+
+    <nav id='main-nav'>
+    <li class= 'nav-item' id='table-url'> Tables </li>
+
+    <li class= 'nav-item' id='menu-url'> Menu </li>
+    <li class= 'nav-item' id='kitchen-url'> Kitchen </li>
+    <li class= 'nav-item' >Register</li>
+
+    <li class= 'nav-item' id='edit-url'>Edit Menu</li>
+    <form class= 'nav-item' action="/sessions" method='post'>
+      <input type="hidden" name='_method' value='delete'>
+      <input type="submit" value='log-out'>
+    </form>
+    </nav>
+  </div>
 
   <div class='edit-food'>
     <!-- form for sign-in: to make a new session -->
     <form action="/api/items" method='post'>
       <input type="text" name="item[name]" placeholder="item">
-      <input type="text" name="item[price]" placeholder="price (cents)">
+      <input type="text" name="item[cents]" placeholder="price (cents)">
       <input type="text" name="item[description]" placeholder="description">
       <input type="submit">
     </form>
   </div>
+
+
+
+
 
   </body>
 </html>

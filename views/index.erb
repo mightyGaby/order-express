@@ -22,7 +22,7 @@
       <li class= 'nav-item' id='kitchen-url'> Kitchen </li>
       <li class= 'nav-item' >Register</li>
 
-      <li class= 'nav-item' id='edit-url'>Edit Menu</li>
+      <li class= 'nav-item' id='edit-url'><a href='./edit_menu'>Edit Menu</a></li>
       <form class= 'nav-item' action="/sessions" method='post'>
         <input type="hidden" name='_method' value='delete'>
         <input type="submit" value='log-out'>
@@ -38,29 +38,28 @@
         <ul class='side-list' id='table-list'>All Tables</ul>
       </div>
 
-      <div id='kitchen-view'>
-        <h1> All Orders </h1>
-        <div id="party-list">
-        </div>
-      </div>
-
       <div id= 'stage'>
+        <div id='kitchen-view'>
+          <h1> All Orders </h1>
+          <div id="party-list">
+          </div>
+        </div>
+
+
+        <div class='menu'>
+          <ul id='menu-items'>
+          </ul>
+        </div>
+
         <div id='party-stage'>
         </div>
         <button id='place-order'>
            Place Order
         </button>
-      </div>
 
-      <div class='menu'>
-      <ul id='menu-items'>
-      </ul>
-      </div>
+        </div>
+    </div>
 
-
-
-
-      </div>
 
 
     <!-- templates -->

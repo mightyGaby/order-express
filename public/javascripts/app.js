@@ -32,7 +32,7 @@ $(document).ready(function(){
   });
 
 
-  // app.menuItems.fetch();      //collection fetches data
+  app.menuItems.fetch();      //collection fetches data
   app.partyList.fetch();
 
   $('#party-list').click(function(){
@@ -41,26 +41,23 @@ $(document).ready(function(){
 
   $('#table-url').click(function(){
     $('#tables-list').fadeToggle("slow");
-  })
+  });
 
   $('#menu-url').click(function(){
     app.menuItems.fetch();      //collection fetches data
     $('#menu-items').show();
     $('#kitchen-view').hide();
-    $('#stage').hide();
-  })
+    $('#party-list').hide();
+
+  });
 
   $('#kitchen-url').click(function(){
     $('#kitchen-view').show();
+    $('#party-list').show();
     $('#menu-items').hide();
+    $('party-stage').hide();
   });
 
-
-
-  // $('.tables').on('click', function(){
-  //   //display single party view
-  //   $('#table-view').toggle();
-  // })
 
 
   $('#place-order').on('click', function(){  // Creating an event listener
