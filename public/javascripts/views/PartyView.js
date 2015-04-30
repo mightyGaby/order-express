@@ -12,17 +12,18 @@ app.PartyView = Backbone.View.extend({
   render: function() {
     var data = this.model.attributes;
     this.$el.append(this.template(data));
+    $('body').append(this.$el);
     this.renderItemsList();
     return this;
   },
 
   renderItemsList: function(){
-    var items = this.model.get('items')
-    var itemsList = $('<ul class="party-order">');
-    for (i in items){
-      itemsList.append($('<li class="party-order-item">').text(items[i]['name']));
+    var parties = this.model.get('party')
+    var partyList = $('<ul class="party-order">');
+    for (i in parties){
+      partyList.append($('<li class="party-order-item">').text(items[i]['name']));
     }
-    this.$el.append(itemsList);
+    this.$el.append(partyList);
   },
 
   events:{

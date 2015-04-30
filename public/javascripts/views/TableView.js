@@ -6,14 +6,14 @@ app.TableView = Backbone.View.extend({
     this.listenTo( this.model,'change', this.render);
     this.listenTo( this.model, 'delete', this.remove);
   },
-  template: _.template('<li class = "items"> <%= name %> </li>'),
+  template: _.template('<li class = "tables"> <%= name %> </li>'),
   render: function() {
     var data = this.model.attributes;
     this.$el.html(this.template(data));
     $('body').append(this.$el);
   },
   events: {
-    'click .items': 'selectTable'
+    'click .tables': 'selectTable'
     // 'tap .items': 'selectItem'
     },
     selectTable: function(){

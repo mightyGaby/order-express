@@ -31,6 +31,12 @@ $(document).ready(function(){
     el: $('#table-list'),
   });
 
+  // app.partyOrderDisplay = new app.GeneralListView({
+  //   modelView: app.PartyView,
+  //   collection: app.partyList,
+  //   el: $('#party-order'),
+  // });
+
   app.menuItems.fetch();      //collection fetches data
   app.partyList.fetch();
 
@@ -46,6 +52,11 @@ $(document).ready(function(){
     $('#tables-list').hide();
     $('#menu-items').toggle();
   })
+
+  // $('.tables').on('click', function(){
+  //   //display single party view
+  //   $('#table-view').toggle();
+  // })
 
 
 
