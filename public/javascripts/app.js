@@ -40,12 +40,12 @@ $(document).ready(function(){
   app.menuItems.fetch();      //collection fetches data
   app.partyList.fetch();
 
-  $('#party-list').click(function(){
-    $('.party-order').toggle();
-  });
+  // $('#party-list').click(function(){
+  //   $('.party-order').toggle();
+  // });
 
   $('#table-url').click(function(){
-    $('#tables-list').toggle();
+    $('#tables-list').fadeToggle("slow");
   })
 
   $('#menu-url').click(function(){

@@ -8,11 +8,11 @@ app.PartyView = Backbone.View.extend({
     this.listenTo( this.model, 'delete', this.remove);
   },
 
-  template: _.template('<li class="party"> <%= name %> party of <%= size %> </li>'),
+  template: _.template('<div class="party"> <%= name %> party of <%= size %> </div>'),
   render: function() {
     var data = this.model.attributes;
     this.$el.append(this.template(data));
-    $('body').append(this.$el);
+    $('#table-view').append(this.$el);
     this.renderItemsList();
     return this;
   },
